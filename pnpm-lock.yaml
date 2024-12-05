@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@directus/sdk':
+    specifier: ^18.0.0
+    version: 18.0.0
   next:
     specifier: 14.2.18
     version: 14.2.18(react-dom@18.3.1)(react@18.3.1)
@@ -47,6 +50,11 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
     dev: true
+
+  /@directus/sdk@18.0.0:
+    resolution: {integrity: sha512-PREPeIKI1/EpvWxZHqWaRgL0HNccaauQm98sABBPMPwH3gCHfSz+sFJyugyx+MYHBiv2K5M8BCxF3MRCbAzljw==}
+    engines: {node: '>=18.0.0'}
+    dev: false
 
   /@eslint-community/eslint-utils@4.4.1(eslint@8.57.1):
     resolution: {integrity: sha512-s3O3waFUrMV8P/XaF/+ZTp1X9XBZW1a4B97ZnjQF2KYWaFD2A8KyFBsrsfSjEmjn3RGWAIuvlneuZm3CUK3jbA==}
