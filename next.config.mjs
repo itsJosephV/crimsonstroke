@@ -4,7 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: process.env.DIRECTUS_API_ENDPOINT.replace("https://", ""),
+        hostname: process.env.DIRECTUS_API_ENDPOINT
+          ? process.env.DIRECTUS_API_ENDPOINT.replace("https://", "")
+          : "",
       },
     ],
   },
