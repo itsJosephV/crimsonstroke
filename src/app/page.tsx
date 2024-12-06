@@ -1,11 +1,13 @@
 import { getHome } from "@/lib/home";
+import { getNoticias } from "@/lib/noticias";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
   const data = await getHome();
+  const noticias = await getNoticias();
 
-  console.log(data);
+  console.log(noticias);
 
   return (
     <div className="p-10">
@@ -38,7 +40,16 @@ export default async function Home() {
         </ul>
       )}
       <div className="bg-slate-900 p-5 rounded-md mt-10">
-        <p>Posts</p>
+        <p>Noticias</p>
+        {Array.isArray(noticias) &&
+          noticias.map((n) => {
+            return (
+              <div key={n.id} className="bg-violet-950 p-3 mt-3">
+                <h2>{n.titulo}</h2>
+                <p className="mt-3">{n.descripcion}</p>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
