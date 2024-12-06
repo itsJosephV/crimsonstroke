@@ -12,7 +12,7 @@ export default async function Home() {
   });
   const noticias = await getCatchedNews();
 
-  console.log(noticias, "noticiassss");
+  // console.log(noticias, "noticiassss");
 
   return (
     <div className="p-10">

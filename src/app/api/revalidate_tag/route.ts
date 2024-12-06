@@ -14,6 +14,8 @@ const errorMessages = {
 export async function POST(request: NextRequest) {
   // data will contain the body sent in this request (we're going to send this via Directus Flow).
   const data = await request.json();
+
+  console.log(data);
   // check that the secret provided matches the one in our app
   const isSecretValid = data.secret === process.env.REVALIDATION_SECRET;
   // check that we're receiving a tag
