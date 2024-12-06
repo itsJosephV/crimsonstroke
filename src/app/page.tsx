@@ -12,6 +12,8 @@ export default async function Home() {
   });
   const noticias = await getCatchedNews();
 
+  console.log(noticias);
+
   // console.log(noticias, "noticiassss");
 
   return (
