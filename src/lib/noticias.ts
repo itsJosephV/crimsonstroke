@@ -1,4 +1,4 @@
-import { readItems } from "@directus/sdk";
+import { readItems, readItem } from "@directus/sdk";
 import { directus } from "./directus";
 
 
@@ -10,4 +10,8 @@ type Noticias = {
 
 export async function getNoticias() {
   return directus.request(readItems("noticias")) as unknown as Noticias
+}
+
+export async function getNoticia(id: string) {
+  return directus.request(readItem("noticias", id)) as unknown as Noticias
 }

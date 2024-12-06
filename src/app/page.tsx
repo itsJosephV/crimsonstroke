@@ -44,10 +44,12 @@ export default async function Home() {
         {Array.isArray(noticias) &&
           noticias.map((n) => {
             return (
-              <div key={n.id} className="bg-violet-950 p-3 mt-3">
-                <h2>{n.titulo}</h2>
-                <p className="mt-3">{n.descripcion}</p>
-              </div>
+              <Link href={`noticias/${n.id}`} key={n.id}>
+                <div className="bg-violet-950 w-full p-3 mt-3">
+                  <h2>{n.titulo}</h2>
+                  <p className="mt-3">{n.descripcion}</p>
+                </div>
+              </Link>
             );
           })}
       </div>
