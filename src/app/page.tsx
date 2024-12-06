@@ -1,13 +1,18 @@
 import { getHome } from "@/lib/home";
 import { getNoticias } from "@/lib/noticias";
+import { unstable_cache } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
   const data = await getHome();
-  const noticias = await getNoticias();
 
-  console.log(noticias);
+  const getCatchedNews = unstable_cache(getNoticias, [], {
+    tags: ["noticias"],
+  });
+  const noticias = await getCatchedNews();
+
+  console.log(noticias, "noticiassss");
 
   return (
     <div className="p-10">

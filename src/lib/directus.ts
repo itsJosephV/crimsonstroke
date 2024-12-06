@@ -5,6 +5,9 @@ if (!process.env.DIRECTUS_API_ENDPOINT) {
 }
 
 
-export const directus = createDirectus(process.env.DIRECTUS_API_ENDPOINT as string).with(rest({
-  onRequest: (options) => ({ ...options, cache: 'no-store' }),
-}));
+export const directus = createDirectus(process.env.DIRECTUS_API_ENDPOINT as string).with(rest());
+
+
+// export const directus = createDirectus(process.env.DIRECTUS_API_ENDPOINT as string).with(rest({
+//   onRequest: (options) => ({ ...options, cache: 'no-store' }),
+// }));
