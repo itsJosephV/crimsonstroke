@@ -9,9 +9,7 @@ type Noticias = {
 }
 
 export async function getNoticias() {
-  return directus.request(
-    readItems("noticias", { params: { cache: "no-store" } })
-  );
+  return directus.request(readItems("noticias")) as unknown as Noticias
 }
 
 export async function getNoticia(id: string) {
