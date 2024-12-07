@@ -56,6 +56,12 @@ export default async function Home() {
                   <h2>{n.titulo}</h2>
                   <p className="mt-3">{n.descripcion}</p>
                 </div>
+                <Image
+                  width={300}
+                  height={300}
+                  src={`${process.env.DIRECTUS_API_ENDPOINT}/assets/${n.imagen}`}
+                  alt="test-image"
+                />
               </Link>
             );
           })}

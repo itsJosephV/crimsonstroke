@@ -11,6 +11,12 @@ const page = async ({ params }: { params: { id: string } }) => {
       <Link className="block" href={"/"}>
         ← go back
       </Link>
+      <div className="grid gap-4">
+        <div
+          className="wysiwyg max-w-7xl mx-auto"
+          dangerouslySetInnerHTML={{ __html: noticia.text2 }}
+        ></div>
+      </div>
     </div>
   );
 };

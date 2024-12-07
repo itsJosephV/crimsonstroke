@@ -3,13 +3,15 @@ import { directus } from "./directus";
 
 
 type Noticias = {
+  id: number;
   titulo?: string;
   imagen?: string;
   descripcion?: string
+  text2: string
 }
 
 export async function getNoticias() {
-  return directus.request(readItems("noticias")) as unknown as Noticias
+  return directus.request(readItems("noticias")) as unknown as Noticias[]
 }
 
 export async function getNoticia(id: string) {
