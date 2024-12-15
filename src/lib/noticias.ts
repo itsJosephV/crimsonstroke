@@ -11,7 +11,9 @@ type Noticias = {
 }
 
 export async function getNoticias() {
-  return directus.request(readItems("noticias")) as unknown as Noticias[]
+  return directus.request(
+    readItems("noticias")
+  ) as unknown as Noticias[];
 }
 
 export async function getNoticia(id: string) {
