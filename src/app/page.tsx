@@ -1,3 +1,4 @@
+import Video from "@/components/video";
 import { getHome } from "@/lib/home";
 import { getNoticias } from "@/lib/noticias";
 import { unstable_cache } from "next/cache";
@@ -24,17 +25,7 @@ export default async function Home() {
         <p className="text-slate-400">{data.hero_subtitle}</p>
       </div>
       <div>
-        <video
-          muted
-          loop
-          autoPlay
-          controls={false}
-          playsInline
-          className="h-full w-full object-cover"
-        >
-          <source src="https://cdn.crimsonstroke.xyz/mockup%20video.mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <Video />
       </div>
 
       {data.hero_cover && (
