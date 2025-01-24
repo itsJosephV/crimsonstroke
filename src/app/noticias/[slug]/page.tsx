@@ -1,3 +1,4 @@
+import FacebookShareButton from "@/components/FacebookShareButton";
 import ShareButton from "@/components/ShareButton";
 import type { Metadata } from "next";
 
@@ -8,6 +9,7 @@ async function getPost(slug: string) {
     title: `Noticia sobre ${slug}`,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue est, laoreet ac sapien quis, dapibus volutpat est. Aliquam laoreet blandit enim, quis maximus dolor placerat a. Vestibulum et ante a orci dignissim sodales vitae et erat. Donec vitae nibh sapien. Phasellus sit amet metus dui. Maecenas magna odio, pharetra a tincidunt et, cursus et enim. Maecenas mollis dui nisl, sed cursus diam suscipit quis. Cras blandit pellentesque lobortis.`,
     content: "Contenido del post...",
+    hashtag: "#crimsonstroke",
   };
 }
 
@@ -63,6 +65,11 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         url={absoluteUrl}
         title={post.title}
         description={post.description}
+      />
+      <FacebookShareButton
+        url={absoluteUrl}
+        quote={post.title}
+        hashtag={post.hashtag}
       />
     </div>
   );
