@@ -6,7 +6,7 @@ async function getPost(slug: string) {
   // Reemplaza esto con tu llamada a API/CMS
   return {
     title: `Noticia sobre ${slug}`,
-    description: `Descripción detallada de la noticia ${slug}`,
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue est, laoreet ac sapien quis, dapibus volutpat est. Aliquam laoreet blandit enim, quis maximus dolor placerat a. Vestibulum et ante a orci dignissim sodales vitae et erat. Donec vitae nibh sapien. Phasellus sit amet metus dui. Maecenas magna odio, pharetra a tincidunt et, cursus et enim. Maecenas mollis dui nisl, sed cursus diam suscipit quis. Cras blandit pellentesque lobortis.`,
     content: "Contenido del post...",
   };
 }
@@ -23,6 +23,8 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     openGraph: {
+      description: post.description,
+      type: "article",
       images: [
         {
           url: "https://images.unsplash.com/photo-1737405555489-78b3755eaa81?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
