@@ -16,10 +16,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const post = {
-    title: `Noticia sobre ${params.slug}`,
-    description: `Descripción detallada de la noticia ${params.slug}`,
-  };
+  const post = await getPost(params.slug);
 
   return {
     title: post.title,
@@ -27,7 +24,7 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://crimsonstroke.xyz/noticias/${params.slug}`,
+      url: `https://crimsonstroke.xyz/noticias/${params.slug}`, // URL absoluta
       type: "article",
       images: [
         {
