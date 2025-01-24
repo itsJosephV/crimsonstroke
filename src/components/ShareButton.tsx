@@ -1,19 +1,25 @@
-"use client";
-import React from "react";
+"use client"; // Si usas hooks como useState
+
 import { LinkedinShareButton, LinkedinIcon } from "next-share";
 
-const ShareButton = () => {
+export default function ShareButton({
+  url,
+  title,
+  description,
+}: {
+  url: string;
+  title: string;
+  description: string;
+}) {
   return (
-    <div>
-      <LinkedinShareButton
-        url="https://crimsonstroke.xyz"
-        title="crimsonstroke.xyz"
-        summary="Personal website of Crimson Stroke"
-      >
-        <LinkedinIcon size={32} round />
-      </LinkedinShareButton>
-    </div>
+    <LinkedinShareButton
+      url={url}
+      title={title}
+      summary={description}
+      source="crimsonstroke.xyz"
+    >
+      <LinkedinIcon size={32} round />
+      <span className="ml-2">Compartir en LinkedIn</span>
+    </LinkedinShareButton>
   );
-};
-
-export default ShareButton;
+}
