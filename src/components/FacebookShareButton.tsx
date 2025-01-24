@@ -1,3 +1,4 @@
+"use client";
 import { FacebookShareButton as FbBtn, FacebookIcon } from "next-share";
 
 const FacebookShareButton = ({
