@@ -19,7 +19,6 @@ export default function ShareButton({
       source="crimsonstroke.xyz"
     >
       <LinkedinIcon size={32} round />
-      <span className="ml-2">Compartir en LinkedIn</span>
     </LinkedinShareButton>
   );
 }
