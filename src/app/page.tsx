@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>Illustrations Portfolio Project</h1>
+      <h1>crimsonstroke.xyz</h1>
     </div>
   );
 }
